@@ -1,0 +1,30 @@
+{
+    "name": "rez1pro/lara-bkash",
+    "version": "1.0.0",
+    "description": "Bangladesh or internationaly integrated bkash payment gateway provider package",
+    "type": "composer-plugin",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Rez1pro\\LaraBkash\\": "src/Core/"
+        }
+    },
+    "authors": [
+        {
+            "name": "rez1pro",
+            "email": "rezwanhossainsajib@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rez1pro\\LaraBkash\\LaraBkashServiceProvider"
+            ],
+            "aliases": {
+                "LaraBkash": "Rez1pro\\LaraBkash\\LaraBkashFacade"
+            }
+        }
+    }
+}
