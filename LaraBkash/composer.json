@@ -1,7 +1,7 @@
 {
     "name": "rez1pro/lara-bkash",
     "version": "1.0.0",
-    "description": "Bangladesh or internationaly integrated bkash payment gateway provider package",
+    "description": "bKash payment gateway integration for laravel",
     "type": "composer-plugin",
     "license": "MIT",
     "autoload": {
@@ -16,7 +16,10 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "guzzlehttp/guzzle": "8.0.x-dev",
+        "php": "^8.2"
+    },
     "extra": {
         "laravel": {
             "providers": [

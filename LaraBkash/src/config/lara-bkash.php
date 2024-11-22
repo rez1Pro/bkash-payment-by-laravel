@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * bKash Payment Gateway Configuration
+ *
+ * Here you can configure your bKash payment gateway credentials.
+ * These values should be obtained from your bKash merchant account.
+ */
+
+$mode = env('LARA_BKASH_MODE', 'sandbox');
+$apiVersion = env('LARA_BKASH_API_VERSION', 'v1.2.0-beta');
 return [
     /*
     |--------------------------------------------------------------------------
@@ -11,20 +20,23 @@ return [
     |
     */
 
-    // Your bKash app key from merchant portal
+    /* bKash API Version */
+    'bkash_api_version' => $apiVersion,
+
+    /* Your bKash app key from merchant portal */
     'app_key' => env('LARA_BKASH_APP_KEY', ''),
 
-    // Your bKash app secret from merchant portal
+    /* Your bKash app secret from merchant portal */
     'app_secret' => env('LARA_BKASH_APP_SECRET', ''),
 
-    // Your bKash username/user ID from merchant portal
-    'user_id' => env('LARA_BKASH_USER_ID', ''),
+    /* Your bKash username/user ID from merchant portal */
+    'username' => env('LARA_BKASH_USERNAME', ''),
 
-    // Your bKash password from merchant portal
-    'user_password' => env('LARA_BKASH_USER_PASSWORD', ''),
+    /* Your bKash password from merchant portal */
+    'password' => env('LARA_BKASH_USER_PASSWORD', ''),
 
-    // Payment environment - can be 'sandbox' for testing or 'live' for production
-    'mode' => env('LARA_BKASH_MODE', 'sandbox'),
+    /* bKash API URL */
+    'base_url' => $mode === 'sandbox' ? 'https://tokenized.sandbox.bka.sh/' . $apiVersion : 'https://tokenized.pay.bka.sh/' . $apiVersion,
 
-    'url' => env('LARA_BKASH_URL', 'https://checkout.sandbox.bka.sh/v1.2.0-beta/checkout/payment/create'),
+    'currency' => 'BDT',
 ];
